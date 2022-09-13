@@ -26,8 +26,18 @@ export default function Dropdowns({section, sectionColor}) {
   }
 
 
-  const uniqueColors = [...new Set(sectionColor)]
+  let uniqueColors = []
 
+  const getUnique = async() => {
+    try {
+      return uniqueColors =  [...new Set(sectionColor)]
+    } catch (error) {
+        console.log(error)
+    }
+  }
+  getUnique()
+
+  console.log(uniqueColors);
   useEffect(() => {
     filterSectionColor()
   }, [filterSectionColor()])
