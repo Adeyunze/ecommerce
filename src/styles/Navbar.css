@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.bottom-nav {
+    font-family: 'Playfair Display', serif;
+    @apply font-normal flex md:flex-row md:items-center items-start justify-between pt-5;
+}
+
+nav {
+    @apply border-b border-[#A5A5A5] pb-3;
+}
+
+.navbar {
+    @apply mt-[20px] xl:mx-24 mx-6;
+}
+
+.menu {
+    @apply md:hidden w-[30px] h-[30px] mr-3 cursor-pointer flex;
+}
+
+.bottom-nav-toggle {
+    @apply md:w-fit md:static md:h-fit flex flex-col-reverse justify-end translate-x-0 items-start fixed z-10 top-0 left-0 w-[80vw] h-[100vh] bg-white transition-transform;
+    
+}
+
+.bottom-nav-default {
+    @apply md:translate-x-0 translate-x-[-90vh];
+}
+
+.logo-container {
+    @apply flex justify-between items-center;
+}
+
+.links-container-toggle {
+    @apply flex flex-col md:flex-row md:bg-inherit md:w-[15%] bg-white w-[100%]
+}
+
+.links-container-default {
+    @apply md:flex capitalize font-thin lg:w-[15%] justify-between items-center hidden;
+}
+
+.link-toggle {
+    @apply md:w-fit md:py-0 md:pl-0 md:text-[20px] text-[20px] pr-5 hover:text-[#3a3a3a] ease-in duration-200 w-[100%] pl-5 py-3;
+}
+
+.link-default {
+    @apply md:text-[20px] text-[16px] pr-5 hover:text-[#3a3a3a] ease-in duration-200;
+}
+
+.toggle-nav {
+    @apply flex md:hidden justify-between border-b  border-[#000] w-[100%] p-5 items-center;
+}
+
+.myInput{
+    background-color: #d9d9d94a;
+    color: #3a3a3a;
+}
+
+.search-container{
+    font-family: 'Raleway', sans-serif;
+}
+
+.close-icon {
+    @apply w-[70px] md:hidden block h-[30px] cursor-pointer z-40;
+}
+
+.myG {
+    transition: all 0.25s ease-in-out;
+}
+
+/* @media (min-width: 768px) {
+    
+}
+
+@media (min-width: 1024px) {
+    
+}
+
+@media (min-width: 1280px) {
+    
+} */

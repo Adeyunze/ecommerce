@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+article h1{
+    font-family: 'Playfair Display', serif;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        transform: scale(0);
+    }
+    50% {
+        transform: translateY(-10px);
+        transform: scale(0);
+    }
+    100% {
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.bouncy {
+    animation: bounce 0.25s 1;
+}
