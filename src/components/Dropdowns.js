@@ -21,27 +21,17 @@ export default function Dropdowns({section, sectionColor}) {
       const {color} = product;
       sectionColor.push(color)
 
-      return sectionColor
     })
+    const uniqueColors = [...new Set(sectionColor)]
+    return uniqueColors;
   }
 
+  let color = filterSectionColor()
 
-  let uniqueColors = []
-
-  const getUnique = async() => {
-    try {
-      return uniqueColors =  [...new Set(sectionColor)]
-    } catch (error) {
-        console.log(error)
-    }
-  }
-  getUnique()
-
-  console.log(uniqueColors);
   useEffect(() => {
     filterSectionColor()
   }, [filterSectionColor()])
-  const [changeColor, setChangeColor] = useState(uniqueColors[0])
+  const [changeColor, setChangeColor] = useState(color[0])
 
 
 
@@ -136,7 +126,7 @@ export default function Dropdowns({section, sectionColor}) {
                   leaveTo="opacity-0"
                 >
                   <Listbox.Options className="absolute z-10 mt-1 w-[200px] bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                    {uniqueColors.map((item, index) => (
+                    {color.map((item, index) => (
                       <Listbox.Option
                         key={index}
                         className={({ active }) => 
