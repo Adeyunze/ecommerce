@@ -5,6 +5,7 @@ import App from './App';
 import { AppProvider } from './context/product_context';
 import { CartProvider } from './context/cart_context';
 import { FavProvider } from './context/favourite_context';
+import { FilterProvider } from './context/filter_context'
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from './components/ScrollToTop';
 
@@ -14,14 +15,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AppProvider>
-    <CartProvider>
-    <FavProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <App />
-      </BrowserRouter>
-    </FavProvider>
-    </CartProvider>
+      <FilterProvider>
+        <CartProvider>
+          <FavProvider>
+              <BrowserRouter>
+                <ScrollToTop />
+                <App />
+              </BrowserRouter>
+          </FavProvider>
+        </CartProvider>
+      </FilterProvider>
     </AppProvider>
   </React.StrictMode>
 );

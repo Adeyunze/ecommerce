@@ -8,7 +8,7 @@ import Dropdowns from '../components/Dropdowns';
 
 const Women = () => {
   const { loading } = useEcommerceContext();
-  const [womenColor] = useState([])
+  const [womenColor] = useState(['all'])
   if(loading) {
     return <Loading/>
   }

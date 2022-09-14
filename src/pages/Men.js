@@ -13,10 +13,11 @@ import Loading from '../components/Loading';
 
 const Men = () => {
   const { loading } = useEcommerceContext();
-  const [menColor, setMenColor] = useState([])
+  const [menColor, setMenColor] = useState(['all'])
   if(loading) {
     return <Loading/>
   }
+  
   return (
     <>
       <BreadCrumbs page="Men"/>
