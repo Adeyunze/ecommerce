@@ -17,6 +17,14 @@ export const FilterProvider = ({ children }) => {
     const uniqueColors = [...new Set(sectionColor)]
     return uniqueColors;
     }
+    const filteredProduct = (section) => {
+        let tempProduct
+        tempProduct = products.filter(product => product.gender === `${section}`)
+        let filtered = tempProduct.filter(product => product.color === `${selectedColor}`)
+
+        return filtered
+    }
+
 
 
     
@@ -26,6 +34,7 @@ export const FilterProvider = ({ children }) => {
             selectedColor,
             setSelectedColor,
             filterSectionColor,
+            filteredProduct
         }}
     >{children}</FilterContext.Provider>
 }

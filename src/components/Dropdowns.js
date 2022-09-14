@@ -14,18 +14,16 @@ function classNames(...classes) {
 
 export default function Dropdowns({section, sectionColor}) {
   const [selected, setSelected] = useState(sort[0])
-  const { products } = useEcommerceContext()
-  const {selectedColor, setSelectedColor, filterSectionColor} = useFilterContext()
-  
+  const {selectedColor, setSelectedColor, filterSectionColor, selectRef} = useFilterContext()
 
-
-  
   let color = filterSectionColor(section, sectionColor)
   const [changeColor, setChangeColor] = useState(color[0])
-  
-  const selectRef = useRef(null)
 
+useEffect(() => {
+  setSelectedColor(changeColor)
+})
   
+
   return (
     <div className='flex items-center justify-center py-7'>
       <div className='mr-4'>

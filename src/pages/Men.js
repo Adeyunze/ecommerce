@@ -6,6 +6,8 @@ import Product from '../components/Product';
 import Dropdowns from '../components/Dropdowns';
 import { useEcommerceContext } from '../context/product_context';
 import Loading from '../components/Loading';
+import { useFavContext } from '../context/favourite_context';
+
 
 
 
@@ -14,9 +16,13 @@ import Loading from '../components/Loading';
 const Men = () => {
   const { loading } = useEcommerceContext();
   const [menColor, setMenColor] = useState(['all'])
+  const { addToFavourite, favourite } = useFavContext();
+
+
   if(loading) {
     return <Loading/>
   }
+
   
   return (
     <>
