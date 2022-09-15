@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import {
   ADD_TO_CART,
   REMOVE_CART_ITEM,

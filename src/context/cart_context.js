@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useReducer, useContext} from 'react';
 import reducer from '../reducers/cart_reducer'
 

@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
-import heart from '../Images/heart.svg';
 import AmountBtn from './AmountBtn';
 import { useCartContext } from '../context/cart_context';
 import { Link } from 'react-router-dom';

@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable array-callback-return */
 import React from "react";
-import { useContext, useState, useEffect, useCallback, useRef } from 'react';
+import { useContext, useState } from 'react';
 import { useEcommerceContext } from "./product_context";
 
 const FilterContext = React.createContext();
 
 export const FilterProvider = ({ children }) => {
     const [selectedColor, setSelectedColor] = useState('');
+    const [selectedFilter, setSelectedFilter] = useState('')
     const { products } = useEcommerceContext()
 
     const filterSectionColor = (section, sectionColor) => {
@@ -21,7 +22,6 @@ export const FilterProvider = ({ children }) => {
         let tempProduct
         tempProduct = products.filter(product => product.gender === `${section}`)
         let filtered = tempProduct.filter(product => product.color === `${selectedColor}`)
-
         return filtered
     }
 
@@ -34,7 +34,9 @@ export const FilterProvider = ({ children }) => {
             selectedColor,
             setSelectedColor,
             filterSectionColor,
-            filteredProduct
+            filteredProduct,
+            selectedFilter,
+            setSelectedFilter
         }}
     >{children}</FilterContext.Provider>
 }

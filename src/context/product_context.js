@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useContext, useState, useEffect, useCallback } from 'react';
 const url = 'https://yunzestore.herokuapp.com/api/v1/products/'
+const url2 = 'https://yunzestore.herokuapp.com/api/v1/products?sort='
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
@@ -9,13 +9,14 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [singleProduct, setSingleProduct] = useState([]);
   const [myColor, setmyColor] = useState([])
+  const [sortString, setSortString] = useState('');
 
 
 
-  const fetchProduct = async() => {
+  const fetchProduct = async(sort) => {
     setLoading(true);
     try {
-      const response = await fetch(url);
+      const response = await fetch(`${url2}${sort}`);
       const data = await response.json();
       if(data) {
           const myData = data.products
@@ -80,8 +81,8 @@ const AppProvider = ({ children }) => {
 
 
   useEffect(() => {
-    fetchProduct();
-  }, []);
+    fetchProduct(sortString);
+  }, [sortString]);
 
   return <AppContext.Provider
             value={{
@@ -91,7 +92,10 @@ const AppProvider = ({ children }) => {
               fetchSingleProduct,
               singleProduct,
               myColor,
-              setmyColor
+              setmyColor,
+              setSortString,
+              sortString,
+              fetchProduct
             }}
         >{children}</AppContext.Provider>
 }

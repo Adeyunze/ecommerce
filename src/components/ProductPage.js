@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useEcommerceContext } from '../context/product_context';
 import Loading from './Loading';
@@ -20,7 +19,7 @@ const ProductPage = () => {
     fetchSingleProduct(id)
   }, [id, fetchSingleProduct]);
 
-  const { images, name, description, stars, ratings, price, image } = singleProduct;
+  const { images, name, description, stars, ratings, price } = singleProduct;
 
   if(loading) {
     return <Loading/>

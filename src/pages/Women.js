@@ -2,16 +2,11 @@ import React, {useState} from 'react';
 import BreadCrumbs from '../components/BreadCrumbs';
 import '../styles/Men.css';
 import Product from '../components/Product';
-import { useEcommerceContext } from '../context/product_context';
-import Loading from '../components/Loading';
 import Dropdowns from '../components/Dropdowns';
 
 const Women = () => {
-  const { loading } = useEcommerceContext();
   const [womenColor] = useState(['all'])
-  if(loading) {
-    return <Loading/>
-  }
+
   return (
     <>
       <BreadCrumbs page="Women"/>

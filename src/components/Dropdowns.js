@@ -1,11 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState, useRef, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import { sort, colors } from '../data'
-import {useEcommerceContext} from '../context/product_context';
+import { sort } from '../data'
 import { useFilterContext } from '../context/filter_context';
 
 function classNames(...classes) {
@@ -14,13 +10,14 @@ function classNames(...classes) {
 
 export default function Dropdowns({section, sectionColor}) {
   const [selected, setSelected] = useState(sort[0])
-  const {selectedColor, setSelectedColor, filterSectionColor, selectRef} = useFilterContext()
+  const { setSelectedColor, filterSectionColor, selectRef, setSelectedFilter} = useFilterContext()
 
   let color = filterSectionColor(section, sectionColor)
   const [changeColor, setChangeColor] = useState(color[0])
 
 useEffect(() => {
   setSelectedColor(changeColor)
+  setSelectedFilter(selected.name.toLowerCase())
 })
   
 
