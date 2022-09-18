@@ -16,7 +16,7 @@ const Home = () => {
               </div>
               <div className="bottom-land mt-3 flex justify-between items-center lg:text-[16px] md:text-xs text-[16px]">
                 <p>{item.desc}</p>
-                <p className='underline '>
+                <p className='underline'>
                   <Link to={`${item.url}`}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       Shop Now
