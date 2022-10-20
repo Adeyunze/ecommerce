@@ -38,7 +38,7 @@ const CartItems = () => {
                 </div>
               </div>
               <h1 className='font-sans sm:block hidden m-auto'>£{item.price * item.amount}</h1>
-              <button onClick={() => removeCartItem(item.id)} className='sm:ml-0 ml-3'>
+              <button onClick={() => removeCartItem(item.id)} className='sm:ml-0'>
                 <MdDelete className='text-xl'/>
               </button>
             </div>
