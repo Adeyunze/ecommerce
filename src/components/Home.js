@@ -6,7 +6,7 @@ import "../styles/Home.css"
 
 const Home = () => {
   return (
-    <main className='overflow-'>
+    <main className=''>
       <div className="top-head md:flex-row flex-col flex items-center justify-center px-8 py-12 border-b border-[#000]">
         {landing.filter(item => item.position === 'top').map(item => {
           return (

@@ -15,7 +15,7 @@ nav {
 }
 
 .navbar {
-    @apply mt-[20px] xl:mx-24 mx-6;
+    @apply pt-[20px] xl:mx-24 mx-6;
 }
 
 .menu {
@@ -83,3 +83,6 @@ nav {
 @media (min-width: 1280px) {
     
 } */
+.jaja{
+    color: #60a5fa7d;
+}

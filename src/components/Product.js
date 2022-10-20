@@ -6,22 +6,22 @@ import '../styles/Product.css';
 import ProductList from './ProductList';
 import TempProducts from './TempProducts';
 
-const Product = ({section, myColor}) => {
+const Product = ({section}) => {
   const { loading, setSortString } = useEcommerceContext();
   const { selectedColor, selectedFilter } = useFilterContext()
 
 
-  if(selectedFilter === 'most relevant'){
-    setSortString('')
-  }else if(selectedFilter === 'alphabetical'){
-      setSortString('name')
-  }else if(selectedFilter === 'price: low - high'){
-    setSortString('price')
-  }else if(selectedFilter === 'price: high - low'){
-    setSortString('-price')
-  }
+  if(selectedFilter !== 'most relevant'){
+    if(selectedFilter === 'alphabetical'){
+        setSortString('name')
+    }else if(selectedFilter === 'price: low - high'){
+      setSortString('price')
+    }else if(selectedFilter === 'price: high - low'){
+      setSortString('-price')
+    }
+  } 
 
-    if(loading) {
+  if(loading) {
     return <Loading/>
   }
   if(selectedColor !== 'all') {
