@@ -1,12 +1,12 @@
 import React,{useState, useContext, useEffect, useCallback} from "react";
-const url3 = `https://yunzestore.herokuapp.com/api/v1/products?name=`
+const url3 = `https://yunzestores.up.railway.app/api/v1/products?name=`
 
 
 const SearchContext = React.createContext();
 
 export const SearchProvider = ({ children }) => {
     const [loading, setLoading] = useState(false)
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(false) 
     const [searchList, setSearchList] = useState([])
     const [search, setSearch] = useState('')
 

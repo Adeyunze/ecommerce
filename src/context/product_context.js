@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext, useState, useEffect, useCallback } from 'react';
-const url = 'https://yunzestore.herokuapp.com/api/v1/products/'
-const url2 = 'https://yunzestore.herokuapp.com/api/v1/products?sort='
+const url = 'https://yunzestores.up.railway.app/api/v1/products/'
+const url2 = 'https://yunzestores.up.railway.app/api/v1/products?sort='
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
