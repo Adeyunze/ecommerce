@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState, useEffect, useCallback } from 'react';
-const url = 'https://yunzestores-api.cyclic.app/'
+const url = 'https://yunzestores-api.cyclic.app/api/v1/products'
 const url2 = 'https://yunzestores-api.cyclic.app/api/v1/products?sort='
 
 const AppContext = React.createContext();

@@ -1,5 +1,5 @@
 import React,{useState, useContext, useEffect, useCallback} from "react";
-const url3 = `https://yunzestores.up.railway.app/api/v1/products?name=`
+const url3 = `https://yunzestores-api.cyclic.app/api/v1/products?name=`
 
 
 const SearchContext = React.createContext();
